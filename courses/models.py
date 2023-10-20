@@ -14,6 +14,7 @@ class Courses(models.Model):
     image = models.ImageField(upload_to='courses')
     price = models.FloatField()
     tags = TaggableManager()
+    user = models.ForeignKey(User,related_name='user_cours',on_delete=models.SET_NULL,null=True,blank=True)
 
     def __str__(self):
         return self.name

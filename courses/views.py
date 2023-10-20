@@ -8,3 +8,9 @@ from django.views import generic
 
 class CoursList(generic.ListView):
     model = Courses
+
+
+
+class CoursDetail(generic.DetailView):
+    model = Courses
+
