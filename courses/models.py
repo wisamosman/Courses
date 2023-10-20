@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.core.validators import MaxValueValidator,MinValueValidator
 from taggit.managers import TaggableManager
+from django.utils.text import slugify
 
 # Create your models here.
 
@@ -14,12 +15,15 @@ class Courses(models.Model):
     image = models.ImageField(upload_to='courses')
     price = models.FloatField()
     tags = TaggableManager()
+    slug = models.SlugField(null=True,blank=True)
     user = models.ForeignKey(User,related_name='user_cours',on_delete=models.SET_NULL,null=True,blank=True)
 
     def __str__(self):
         return self.name
     
-
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)    
+        super(Courses, self).save(*args, **kwargs) 
 
 
 class Review(models.Model):
