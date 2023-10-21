@@ -31,23 +31,25 @@
 <section class="blog_area single-post-area section-padding">
    <div class="container">
       <div class="row">
+      
+      
+     
+      
+      
          <div class="col-lg-8 posts-list">
             <div class="single-post">
                <div class="feature-img">
-                  <img class="img-fluid" src="assets/img/blog/single_blog_1.png" alt="">
+                  <img class="img-fluid" src="{{object.image.url}}" alt="">
                </div>
                <div class="blog_details">
-                  <h2 style="color: #2d2d2d;">Second divided from form fish beast made every of seas
-                     all gathered us saying he our
+                  <h2 style="color: #2d2d2d;">{{courses.subtitle}}
                   </h2>
                   <ul class="blog-info-link mt-3 mb-4">
                      <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
                      <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                   </ul>
                   <p class="excert">
-                     MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                     should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                     fraction of the camp price. However, who has the willpower
+                     {{courses.description}}
                   </p>
                   <p>
                      MCSE boot camps have its supporters and its detractors. Some people do not understand why you
@@ -96,7 +98,7 @@
                      class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                      <div class="thumb">
                         <a href="#">
-                           <img class="img-fluid" src="assets/img/post/preview.png" alt="">
+                           <img class="img-fluid" src="{{object.image.url}}" alt="">
                         </a>
                      </div>
                      <div class="arrow">
@@ -105,18 +107,18 @@
                         </a>
                      </div>
                      <div class="detials">
-                        <p>Prev Post</p>
+                        <p>Next Cours</p>
                         <a href="#">
-                           <h4 style="color: #2d2d2d;">Space The Final Frontier</h4>
+                           <h4 style="color: #2d2d2d;"></h4>
                         </a>
                      </div>
                   </div>
                   <div
                   class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                   <div class="detials">
-                     <p>Next Post</p>
+                     <p>{{courses.user}}</p>
                      <a href="#">
-                        <h4 style="color: #2d2d2d;">Telescopes 101</h4>
+                        <h4 style="color: #2d2d2d;">${{courses.price}}</h4>
                      </a>
                   </div>
                   <div class="arrow">
@@ -126,7 +128,7 @@
                   </div>
                   <div class="thumb">
                      <a href="#">
-                        <img class="img-fluid" src="assets/img/post/next.png" alt="">
+                        <img class="img-fluid" src="{{object.image.url}}" alt="">
                      </a>
                   </div>
                </div>
@@ -135,7 +137,7 @@
       </div>
       <div class="blog-author">
          <div class="media align-items-center">
-            <img src="assets/img/blog/author.png" alt="">
+            <img src="{{courses.image.url}}" alt="">
             <div class="media-body">
                <a href="#">
                   <h4>Harvard milan</h4>
@@ -257,6 +259,7 @@
             </div>
          </form>
       </div>
+      
    </div>
    <div class="col-lg-4">
       <div class="blog_right_sidebar">

@@ -79,7 +79,7 @@
                 <div class="properties pb-20">
                     <div class="properties__card">
                         <div class="properties__img overlay1">
-                            <a href="#"><img src="{{cours.image.url}}" alt=""></a>
+                            <a href="{% url 'Courses:cours_detail' cours.id %}"><img src="{{cours.image.url}}" alt=""></a>
                         </div>
                         <div class="properties__caption">
                             <p>{{cours}}</p>
@@ -98,11 +98,7 @@
                                     </div>
                                     <p><span>{{review.review}}</span></p>
                                 </div>
-                                <form class="review-form" method="post"
-                                    action="{% url 'Courses:add_review' cours.slug %}">
-                                    {% csrf_token %}
-                                    
-                                </form>
+                                
                                 <div class="price">
                                     <span>${{cours.price}}</span>
                                 </div>
@@ -190,7 +186,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="single-topic text-center mb-30">
                         <div class="topic-img">
-                            <img src="assets/img/gallery/topic1.png" alt="">
+                            <img src="static/assets/img/gallery/topic1.png" alt="">
                             <div class="topic-content-box">
                                 <div class="topic-content">
                                     <h3><a href="#">Programing</a></h3>
