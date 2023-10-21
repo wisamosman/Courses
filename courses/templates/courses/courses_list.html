@@ -79,7 +79,7 @@
                 <div class="properties pb-20">
                     <div class="properties__card">
                         <div class="properties__img overlay1">
-                            <a href="{% url 'Courses:cours_detail' cours.id %}"><img src="{{cours.image.url}}" alt=""></a>
+                            <a href="{% url 'Courses:cours_detail' cours.slug %}"><img src="{{cours.image.url}}" alt=""></a>
                         </div>
                         <div class="properties__caption">
                             <p>{{cours}}</p>
