@@ -15,6 +15,7 @@ class Courses(models.Model):
     image = models.ImageField(upload_to='courses')
     price = models.FloatField()
     tags = TaggableManager()
+    video = models.URLField(null=True,blank=True)
     slug = models.SlugField(null=True,blank=True)
     user = models.ForeignKey(User,related_name='user_cours',on_delete=models.SET_NULL,null=True,blank=True)
 
@@ -36,3 +37,19 @@ class Review(models.Model):
 
     def __str__(self):
         return f"{self.user}-{self.cours}"
+    
+
+
+class Brand(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='brand')
+    slug = models.SlugField(null=True,blank=True)
+    user = models.ForeignKey(User,related_name='user_brand',on_delete=models.SET_NULL,null=True,blank=True)
+    cours = models.ForeignKey(Courses,related_name='cours_brand',on_delete=models.SET_NULL,null=True,blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)    
+        super(Brand, self).save(*args, **kwargs)

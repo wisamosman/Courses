@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Courses,Review
+from .models import Courses,Review,Brand
 from django.views import generic
 from .forms import ReviewForm
 
@@ -15,6 +15,9 @@ class CoursList(generic.ListView):
 class CoursDetail(generic.DetailView):
     model = Courses
 
+
+class BrandList(generic.ListView):
+    model = Brand
 
 #def add_review(request,slug):
     #cours = Courses.objects.get(id=id)
