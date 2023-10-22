@@ -219,7 +219,7 @@
             <div class="right-content3">
                 <!-- img -->
                 <div class="right-img">
-                    <img src="assets/img/gallery/about3.png" alt="">
+                    <img src="static/assets/img/gallery/about3.png" alt="">
                 </div>
             </div>
             <div class="left-content3">
@@ -270,51 +270,20 @@
                 </div>
             </div>
             <div class="team-active">
+            {% for brand in brand_list %}
                 <div class="single-cat text-center">
-                    <div class="cat-icon">
-                        <img src="assets/img/gallery/team1.png" alt="">
+                        <div class="cat-icon">
+                            <img src="{{brand.image.url}}" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">{{brand}}</a></h5>
+                            <p>The automated process all your website tasks.</p>
+                            <p>{{brand.user}}</p>
+                        </div>
                     </div>
-                    <div class="cat-cap">
-                        <h5><a href="services.html">Mr. Urela</a></h5>
-                        <p>The automated process all your website tasks.</p>
-                    </div>
-                </div>
-                <div class="single-cat text-center">
-                    <div class="cat-icon">
-                        <img src="assets/img/gallery/team2.png" alt="">
-                    </div>
-                    <div class="cat-cap">
-                        <h5><a href="services.html">Mr. Uttom</a></h5>
-                        <p>The automated process all your website tasks.</p>
-                    </div>
-                </div>
-                <div class="single-cat text-center">
-                    <div class="cat-icon">
-                        <img src="assets/img/gallery/team3.png" alt="">
-                    </div>
-                    <div class="cat-cap">
-                        <h5><a href="services.html">Mr. Shakil</a></h5>
-                        <p>The automated process all your website tasks.</p>
-                    </div>
-                </div>
-                <div class="single-cat text-center">
-                    <div class="cat-icon">
-                        <img src="assets/img/gallery/team4.png" alt="">
-                    </div>
-                    <div class="cat-cap">
-                        <h5><a href="services.html">Mr. Arafat</a></h5>
-                        <p>The automated process all your website tasks.</p>
-                    </div>
-                </div>
-                <div class="single-cat text-center">
-                    <div class="cat-icon">
-                        <img src="assets/img/gallery/team3.png" alt="">
-                    </div>
-                    <div class="cat-cap">
-                        <h5><a href="services.html">Mr. saiful</a></h5>
-                        <p>The automated process all your website tasks.</p>
-                    </div>
-                </div>
+            {% endfor %}
+                
+                
             </div>
         </div>
     </section>
