@@ -75,34 +75,36 @@
                 </div>
             </div>
             <div class="courses-actives">
-                {% for cours in courses_list %}
+                {% for brand in brand_list %}
                 <div class="properties pb-20">
                     <div class="properties__card">
                         <div class="properties__img overlay1">
-                            <a href="{% url 'Courses:cours_detail' cours.slug %}"><img src="{{cours.image.url}}" alt=""></a>
+                            <a href=""><img src="{{brand.image.url}}" alt=""></a>
                         </div>
                         <div class="properties__caption">
-                            <p>{{cours}}</p>
+                            <p>{{brand}}</p>
                             <h3><a href="#">{{cours.subtitle}}</a></h3>
                             <p>{{cours.description}}
 
                             </p>
-                            <div class="properties__footer d-flex justify-content-between align-items-center">
-                                <div class="restaurant-name">
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half"></i>
+                            {% for brand in brand_list.cours_brand.all %} 
+                                <div class="properties__footer d-flex justify-content-between align-items-center">
+                                    <div class="restaurant-name">
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half"></i>
+                                        </div>
+                                        <p><span>{{review.user}}</span></p>
                                     </div>
-                                    <p><span>{{review.user}}</span></p>
+                                    
+                                    <div class="price">
+                                        <span>${{cours.price}}</span>
+                                    </div>
                                 </div>
-                                
-                                <div class="price">
-                                    <span>${{cours.price}}</span>
-                                </div>
-                            </div>
+                            {% endfor %}
                             <a href="#" class="border-btn border-btn2">Find out more</a>
                         </div>
 
@@ -184,14 +186,14 @@
                 </div>
             </div>
             <div class="row">
-                {% for cours in courses_list %}
+                {% for brand in brand_list %}
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="single-topic text-center mb-30">
                         <div class="topic-img">
-                            <img src="{{cours.image.url}}" alt="">
+                            <img src="{{brand.image.url}}" alt="">
                             <div class="topic-content-box">
                                 <div class="topic-content">
-                                    <h3 ><a href="#">Programing</a></h3>
+                                    <h3 ><a href="#" style="color: yellow;" >{{brand}}</a></h3>
                                 </div>
                             </div>
                         </div>
