@@ -19,10 +19,12 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from settings.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('courses/', include('courses.urls',namespace='Courses')),
+    path('',home),
     
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

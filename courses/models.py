@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.core.validators import MaxValueValidator,MinValueValidator
 from taggit.managers import TaggableManager
 from django.utils.text import slugify
+from django.db.models.aggregates import Avg , Sum,Count
 
 # Create your models here.
 
