@@ -9,6 +9,7 @@ from .forms import ReviewForm
 
 class CoursList(generic.ListView):
     model = Courses
+    paginate_by = 8
 
 
 

@@ -11,8 +11,8 @@ from django.db.models.aggregates import Avg , Sum,Count
 
 class Courses(models.Model):
     name = models.CharField(max_length=30)
-    subtitle = models.TextField(max_length=100)
-    description = models.TextField(max_length=1000)
+    subtitle = models.TextField(max_length=10)
+    description = models.TextField(max_length=20)
     image = models.ImageField(upload_to='courses')
     price = models.FloatField()
     tags = TaggableManager()

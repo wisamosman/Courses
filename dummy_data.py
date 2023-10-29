@@ -29,9 +29,9 @@ def seed_cours(n):
     for x in range(n):
         Courses.objects.create(
             name = fake.name() ,
-            description=fake.text(max_nb_chars=100) , 
+            description=fake.text(max_nb_chars=20) , 
             price = random.uniform(10.5,200) , 
-            subtitle=fake.text(max_nb_chars=600) , 
+            subtitle=fake.text(max_nb_chars=20) , 
             image = f'courses/{images[random.randint(0,12)]}',
             
             
