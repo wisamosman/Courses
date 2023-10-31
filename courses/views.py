@@ -11,6 +11,17 @@ class CoursList(generic.ListView):
     model = Courses
     paginate_by = 8
 
+    def get_queryset(self):
+        brand =  Brand.objects.all()
+        queryset = Courses.objects.all()
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["brand"] = Brand.objects.all()
+        print(context)
+        return context
+
 
 
 class CoursDetail(generic.DetailView):
