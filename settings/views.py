@@ -6,4 +6,5 @@ from courses.models import Courses , Brand , Review
 def home(request):
     brands = Brand.objects.all()
     courses = Courses.objects.all()
-    return render(request,'settings/home.html',{})
+    return render(request,'settings/home.html',{'brands':brands,
+                                                'courses':courses})
